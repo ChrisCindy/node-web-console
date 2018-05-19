@@ -1,0 +1,47 @@
+{
+  "name": "node-web-console",
+  "version": "1.0.0",
+  "description": "a simple web-based SSH, remote shell in your browser based on Node.js, inspired by web-console",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node WebServer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisCindy/node-web-console.git"
+  },
+  "keywords": [
+    "web",
+    "console",
+    "nodejs"
+  ],
+  "author": "ChrisCindy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisCindy/node-web-console/issues"
+  },
+  "homepage": "https://github.com/ChrisCindy/node-web-console#readme",
+  "dependencies": {
+    "@koa/cors": "^2.2.1",
+    "jayson": "^2.0.6",
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-connect": "^2.0.1",
+    "koa-router": "^7.4.0",
+    "koa-static": "^4.0.2",
+    "koa-views": "^6.1.4",
+    "natural-compare-lite": "^1.4.0",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0"
+  }
+}
