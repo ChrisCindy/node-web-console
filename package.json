@@ -2,10 +2,12 @@
   "name": "node-web-console",
   "version": "1.0.0",
   "description": "a simple web-based SSH, remote shell in your browser based on Node.js, inspired by web-console",
-  "main": "index.js",
+  "main": "server/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node WebServer.js"
+    "client:dev": "parcel watch client/js/index.js -d static",
+    "server:dev": "cross-env NODE_ENV=development nodemon server/app.js",    
+    "client:build": "cross-env NODE_ENV=production parcel build client/js/index.js -d static",
+    "prod": "npm run client:build && cross-env NODE_ENV=production pm2 start server/app.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,9 @@
   "dependencies": {
     "@koa/cors": "^2.2.1",
     "jayson": "^2.0.6",
+    "jquery": "^3.3.1",
+    "jquery-mousewheel": "^3.1.13",
+    "jquery.terminal": "^1.15.0",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.0",
     "koa-connect": "^2.0.1",
@@ -32,16 +37,19 @@
     "koa-static": "^4.0.2",
     "koa-views": "^6.1.4",
     "natural-compare-lite": "^1.4.0",
+    "normalize.css": "^8.0.0",
     "pug": "^2.0.3"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
-    "babel-preset-env": "^1.7.0",
+    "cross-env": "^5.1.5",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.1.0"
+    "eslint-plugin-standard": "^3.1.0",
+    "nodemon": "^1.17.4",
+    "parcel-bundler": "^1.8.1"
   }
 }

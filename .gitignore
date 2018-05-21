@@ -2,3 +2,4 @@ node_modules/**
 .eslintignore
 .eslintrc.js
 .babelrc
+.cache

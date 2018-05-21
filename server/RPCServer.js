@@ -5,7 +5,7 @@ const path = require('path')
 const { execSync } = require('child_process')
 require('natural-compare-lite')
 const jayson = require('jayson')
-const config = require('./config')
+const config = require('../config')
 
 function getHash (algorithm, str) {
   const hash = crypto.createHash(algorithm)
@@ -19,7 +19,6 @@ function isDirectory (thePath) {
 
 // Command execution
 function executeCommand (command) {
-  console.log(execSync(command, {encoding: 'utf-8'}))
   return execSync(`${command} 2>&1`, {
     encoding: 'utf8'
   })
@@ -58,10 +57,6 @@ const isConfigured = config.noLogin || Object.keys(config.accounts).length >= 1
 let HOME_DIRECTORY = ''
 
 const methods = {
-  add (a, b) {
-    console.log('yes')
-    return a + b
-  },
   error: (message) => {
     throw new Error(message)
   },
@@ -175,6 +170,7 @@ const methods = {
     if (result) {
       return result
     }
+    console.log(thePath)
     thePath = thePath.trim()
     if (!thePath) {
       thePath = HOME_DIRECTORY
@@ -199,6 +195,7 @@ const methods = {
     }
   },
   completion: (token, environment, pattern, command, methods) => {
+    console.log(methods)
     const result = methods.initialize.handler(token, environment, methods)
     if (result) {
       return result
@@ -253,9 +250,7 @@ const methods = {
     if (result) {
       return result
     }
-    console.log('hhhh')
     let output = command ? executeCommand(command) : ''
-    console.log(output)
     if (output && output.substr(-1) === '\n') {
       output = output.substr(0, output.length - 1)
     }
@@ -268,6 +263,7 @@ const methods = {
 const RPCServer = jayson.server(methods, {
   router (method, params) {
     return (p, cb) => {
+      console.log(p)
       try {
         const result = this._methods[method].handler(...p, this._methods)
         cb(null, result)
@@ -285,5 +281,6 @@ const RPCServer = jayson.server(methods, {
 
 module.exports = {
   RPCServer,
-  isConfigured
+  isConfigured,
+  noLogin: config.noLogin
 }

@@ -6,7 +6,7 @@ const c2k = require('koa-connect')
 const Router = require('koa-router')
 const path = require('path')
 const cors = require('@koa/cors')
-const { RPCServer, isConfigured } = require('./RPCServer')
+const { RPCServer, isConfigured, noLogin } = require('./RPCServer')
 
 // RPCServer
 const app = new Koa()
@@ -42,7 +42,9 @@ server.use(serve(path.join(__dirname, '/static')))
 const router = new Router()
 router.get('/console', async (ctx) => {
   if (isConfigured) {
-    await ctx.render('index')
+    await ctx.render('index', {
+      NO_LOGIN: noLogin
+    })
   } else {
     await ctx.render('unauthorized')
   }

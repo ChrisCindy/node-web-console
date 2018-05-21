@@ -1,4 +1,12 @@
-# Node-Web-Console
+```
+    _   __          __        _       __     __       ______                       __   
+   / | / /___  ____/ /__     | |     / /__  / /_     / ____/___  ____  _________  / /__ 
+  /  |/ / __ \/ __  / _ \    | | /| / / _ \/ __ \   / /   / __ \/ __ \/ ___/ __ \/ / _ \
+ / /|  / /_/ / /_/ /  __/    | |/ |/ /  __/ /_/ /  / /___/ /_/ / / / (__  ) /_/ / /  __/
+/_/ |_/\____/\__,_/\___/     |__/|__/\___/_.___/   \____/\____/_/ /_/____/\____/_/\___/ 
+                                                                                        
+```
+## Summary
 Node Web Console is a web-based Node.js application that allows to execute shell commands on a server directly from a browser (web-based SSH). This project is inspired by the php-based [web-console](https://github.com/nickola/web-console). 
 The application is very light, does not require any database and can be installed and configured in about 3 minutes.
 
@@ -24,12 +32,31 @@ npm install
 - configure the settings
 
   open `config/index.js` and enter your `$USER` and `$PASSWORD` credentials, edit any other settings that you like (see description in the comments).
+
 - start the web server
 
+  - Development mode
+
   ```shell
-  npm run dev
+  ## build and watch client side scripts and stylesheets
+  npm run client:dev
+
+  ## open another shell 
+  ## start the web server
+  npm run server:dev
   ```
-- open http://localhost:3000/console in your browser
+
+  - Production mode
+
+  ```shell
+  ## build and minify client side scripts and stylesheets
+  npm run client:build
+
+  ## start the server with pm2 
+  npm run prod
+  ```
+
+- open http://localhost:3000/console in your browser and enjoy it
 
 ## License
 Node Web Console is licensed under [GNU LGPL Version 3](http://www.gnu.org/licenses/lgpl.html) license.

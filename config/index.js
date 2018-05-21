@@ -3,7 +3,7 @@ module.exports = {
   noLogin: false,
   // Single-user credentials
   user: 'chriscindy',
-  password: '199',
+  password: '19930919Yxy',
   // Multi-user credentials
   // Example:
   // account: { 'user1': 'password1', 'user2':'password2' }
