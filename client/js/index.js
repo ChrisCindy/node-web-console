@@ -9,7 +9,7 @@ jt(window, $)
 require('jquery-mousewheel')($)
 
 const settings = {
-  url: '//localhost:4000/',
+  url: `//${window.location.hostname}:4000/`,
   promptPathLength: 32,
   domain: document.domain || window.location.host,
   isSmallWindow: $(document).width() < 625
