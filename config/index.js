@@ -2,8 +2,8 @@ module.exports = {
   // Disable login if set true (don't ask for credentials, be careful)
   noLogin: false,
   // Single-user credentials
-  user: 'chriscindy',
-  password: '19930919Yxy',
+  user: 'dev',
+  password: 'dev',
   // Multi-user credentials
   // Example:
   // account: { 'user1': 'password1', 'user2':'password2' }
@@ -11,7 +11,7 @@ module.exports = {
   // Password hash algorithm (password must be hashed)
   // Example:
   // passwordHashAlgorithm: 'md5'
-  // $PASSWORD_HASH_ALGORITHM: 'sha1'
+  // $PASSWORD_HASH_ALGORITHM: 'sha256'
   passwordHashAlgorithm: '',
   // Home directory (multi-user mode supported)
   // Example:
