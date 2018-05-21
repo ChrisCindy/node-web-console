@@ -52,9 +52,5 @@ router.get('/console', async (ctx) => {
 
 server.use(router.routes()).use(router.allowedMethods())
 
-// if (isConfigured) {
-//   RPCServer.http().listen(4000)
-// }
-
 server.listen(3000)
 app.listen(4000)

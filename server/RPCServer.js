@@ -24,29 +24,6 @@ function executeCommand (command) {
   })
 }
 
-// Command parsing
-// function parseCommand (command) {
-//   let value = command.trimLeft()
-//   if (value) {
-//     const values = value.split(' ')
-//     const totalValues = values.length
-
-//     if (totalValues > 1) {
-//       value = values[totalValues - 1]
-
-//       for (let i = totalValues - 2; i >= 0; i--) {
-//         const valueItem = values[i]
-//         if (valueItem.substr(-1) === '\\') {
-//           value = `${valueItem} ${value}`
-//         } else {
-//           break
-//         }
-//       }
-//     }
-//   }
-//   return value
-// }
-
 // Initializing
 if (config.user && config.password) {
   config.accounts[config.user] = config.password
