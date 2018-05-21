@@ -147,7 +147,6 @@ const methods = {
     if (result) {
       return result
     }
-    console.log(thePath)
     thePath = thePath.trim()
     if (!thePath) {
       thePath = HOME_DIRECTORY
@@ -172,7 +171,6 @@ const methods = {
     }
   },
   completion: (token, environment, pattern, command, methods) => {
-    console.log(methods)
     const result = methods.initialize.handler(token, environment, methods)
     if (result) {
       return result
@@ -240,7 +238,6 @@ const methods = {
 const RPCServer = jayson.server(methods, {
   router (method, params) {
     return (p, cb) => {
-      console.log(p)
       try {
         const result = this._methods[method].handler(...p, this._methods)
         cb(null, result)
