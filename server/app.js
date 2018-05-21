@@ -33,11 +33,11 @@ server.use(async (ctx, next) => {
   }
 })
 
-server.use(views(path.join(__dirname, '/views'), {
+server.use(views(path.join(__dirname, '../views'), {
   extension: 'pug'
 }))
 
-server.use(serve(path.join(__dirname, '/static')))
+server.use(serve(path.join(__dirname, '../static')))
 
 const router = new Router()
 router.get('/console', async (ctx) => {
