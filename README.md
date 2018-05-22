@@ -8,6 +8,7 @@ English | [简体中文](./README.zh-CN.md)
                                                                                         
 ```
 ## Summary
+
 Node-Web-Console is a web-based Node.js application that allows to execute shell commands on a server directly from a browser (web-based SSH). This project is inspired by the php-based [web-console](https://github.com/nickola/web-console). 
 The application is very light, does not require any database and can be installed and configured in about 3 minutes.
 
@@ -17,6 +18,7 @@ The application is very light, does not require any database and can be installe
 - Easy to extend. Node-Web-Console uses [Koa](https://github.com/koajs/koa) to start the web server. You can easily extend it or integrate it to your own project
 - Secure. You can configure HTTPS (SSL) on your web server and all Node-Web-Console traffic will be protected. Also, Node-Web-Console has a mark to search engines that will disallow the Node-Web-Console page from indexing
 - Fast configuration. Node-Web-Console is a pure Node.js project and can be installed and configured quickly
+- Mobile friendly. Node-Web-Console supports inputs from the virtual keyboard in the mobile browser. So you can use it conveniently in your mobile devices like iPad, iPhone and Android phones.
 
 
 ## Installation
@@ -63,4 +65,5 @@ npm install
 - open `http://localhost:3000/console` in your browser and enjoy it.
 
 ## License
+
 Node-Web-Console is licensed under [GNU LGPL Version 3](http://www.gnu.org/licenses/lgpl.html) license.
