@@ -49,7 +49,6 @@ function init () {
     login: !noLogin ? login : false,
     prompt: makePrompt(),
     greetings: !noLogin ? 'You are authenticated' : '',
-    tabcompletion: true,
     completion: completion,
     onBlur: function () {
       return false
