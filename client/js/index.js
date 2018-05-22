@@ -124,7 +124,6 @@ function service (terminal, method, parameters, success, error, options) {
   if (options.pause) {
     terminal.pause()
   }
-
   $.jrpc(settings.url, method, parameters, function (json) {
     if (options.pause) {
       terminal.resume()
@@ -213,7 +212,10 @@ function login (user, password, callback) {
     service(terminal, 'login', [user, password], function (result) {
       if (result && result.token) {
         environment.user = user
-        updateEnvironment(terminal, result.environment)
+        // FIXME: updateEnvironment not work Synchronously
+        setTimeout(() => {
+          updateEnvironment(terminal, result.environment)
+        }, 0)
         showOutput(result.output)
         callback(result.token)
       } else {
