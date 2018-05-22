@@ -5,7 +5,7 @@
   "main": "server/app.js",
   "scripts": {
     "client:dev": "parcel watch client/js/index.js -d static",
-    "server:dev": "cross-env NODE_ENV=development nodemon server/app.js",    
+    "server:dev": "cross-env NODE_ENV=development nodemon server/app.js",
     "client:build": "cross-env NODE_ENV=production parcel build client/js/index.js -d static",
     "prod": "npm run client:build && cross-env NODE_ENV=production pm2 start server/app.js"
   },
@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/ChrisCindy/node-web-console#readme",
   "dependencies": {
-    "@koa/cors": "^2.2.1",
     "jayson": "^2.0.6",
     "jquery": "^3.3.1",
     "jquery-mousewheel": "^3.1.13",
@@ -33,6 +32,7 @@
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.0",
     "koa-connect": "^2.0.1",
+    "koa-mount": "^3.0.0",
     "koa-router": "^7.4.0",
     "koa-static": "^4.0.2",
     "koa-views": "^6.1.4",
