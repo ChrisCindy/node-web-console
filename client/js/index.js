@@ -45,19 +45,18 @@ let terminal = null
 init()
 
 function init () {
-  terminal = $('body').terminal(interpreter, {
+  terminal = $('.shell').terminal(interpreter, {
     login: !noLogin ? login : false,
     prompt: makePrompt(),
     greetings: !noLogin ? 'You are authenticated' : '',
     completion: completion,
-    onBlur: function () {
-      return false
-    },
     exceptionHandler: function (exception) {
       if (!silentMode) {
         terminal.exception(exception)
       }
     }
+  }).css({
+    overflow: 'auto'
   })
 
   // Logout
