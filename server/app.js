@@ -4,28 +4,15 @@ const views = require('koa-views')
 const bodyParser = require('koa-bodyparser')
 const c2k = require('koa-connect')
 const Router = require('koa-router')
+const mount = require('koa-mount')
 const path = require('path')
-const cors = require('@koa/cors')
 const { RPCServer, isConfigured, noLogin } = require('./RPCServer')
 
-// RPCServer
-const app = new Koa()
-
-app.use(bodyParser())
-app.use(async (ctx, next) => {
-  ctx.req.body = ctx.request.body
-  await next()
-})
-
-app.use(cors({
-  method: 'POST'
-}))
-app.use(c2k(RPCServer.middleware()))
-
-// Web Server
 const server = new Koa()
+server.use(bodyParser())
 server.use(async (ctx, next) => {
   try {
+    ctx.req.body = ctx.request.body
     await next()
   } catch (err) {
     ctx.status = 500
@@ -37,7 +24,7 @@ server.use(views(path.join(__dirname, '../views'), {
   extension: 'pug'
 }))
 
-server.use(serve(path.join(__dirname, '../static')))
+server.use(mount('/static', serve(path.join(__dirname, '../static'))))
 
 const router = new Router()
 router.get('/console', async (ctx) => {
@@ -49,8 +36,9 @@ router.get('/console', async (ctx) => {
     await ctx.render('unauthorized')
   }
 })
+router.post('/rpc', c2k(RPCServer.middleware()))
 
 server.use(router.routes()).use(router.allowedMethods())
 
 server.listen(3000)
-app.listen(4000)
+console.log('server started and listen on port 3000')
