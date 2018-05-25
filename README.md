@@ -12,6 +12,8 @@ English | [简体中文](./README.zh-CN.md)
 Node-Web-Console is a web-based Node.js application that allows to execute shell commands on a server directly from a browser (web-based SSH). This project is inspired by the php-based [web-console](https://github.com/nickola/web-console). 
 The application is very light, does not require any database and can be installed and configured in about 3 minutes.
 
+![](./screenshots/node-web-console.jpg)
+
 ## Features
 
 - Clean interface, which looks and feels like a real shell terminal
