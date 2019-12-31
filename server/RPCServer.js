@@ -82,8 +82,8 @@ const methods = {
       if (config.homeDirectory) {
         return config.homeDirectory
       }
-    } else if (typeof user === 'string' && user && config.homeDirectory.user) {
-      return config.homeDirectory.user
+    } else if (typeof user === 'string' && user && config.homeDirectory[user]) {
+      return config.homeDirectory[user]
     }
     return process.cwd()
   },
