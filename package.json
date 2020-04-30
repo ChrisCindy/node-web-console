@@ -26,7 +26,7 @@
   "homepage": "https://github.com/ChrisCindy/node-web-console#readme",
   "dependencies": {
     "jayson": "^2.0.6",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "jquery-mousewheel": "^3.1.13",
     "jquery.terminal": "^1.15.0",
     "koa": "^2.5.1",
