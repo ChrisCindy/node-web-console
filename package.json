@@ -38,7 +38,7 @@
     "koa-views": "^6.1.4",
     "natural-compare-lite": "^1.4.0",
     "normalize.css": "^8.0.0",
-    "pug": "^2.0.3"
+    "pug": "^3.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
